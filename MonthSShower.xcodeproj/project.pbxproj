@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDCF68D116FE4FD90033C1CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF68D016FE4FD90033C1CE /* UIKit.framework */; };
+		FDCF68D316FE4FD90033C1CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF68D216FE4FD90033C1CE /* Foundation.framework */; };
+		FDCF68D516FE4FD90033C1CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDCF68D416FE4FD90033C1CE /* CoreGraphics.framework */; };
+		FDCF68DB16FE4FD90033C1CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDCF68D916FE4FD90033C1CE /* InfoPlist.strings */; };
+		FDCF68DD16FE4FD90033C1CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF68DC16FE4FD90033C1CE /* main.m */; };
+		FDCF68E116FE4FD90033C1CE /* MonthShowerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF68E016FE4FD90033C1CE /* MonthShowerAppDelegate.m */; };
+		FDCF68E316FE4FD90033C1CE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCF68E216FE4FD90033C1CE /* Default.png */; };
+		FDCF68E516FE4FD90033C1CE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCF68E416FE4FD90033C1CE /* Default@2x.png */; };
+		FDCF68E716FE4FD90033C1CE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDCF68E616FE4FD90033C1CE /* Default-568h@2x.png */; };
+		FDCF68EA16FE4FD90033C1CE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDCF68E816FE4FD90033C1CE /* MainStoryboard.storyboard */; };
+		FDCF68ED16FE4FD90033C1CE /* MonthShowerMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF68EC16FE4FD90033C1CE /* MonthShowerMasterViewController.m */; };
+		FDCF68F016FE4FD90033C1CE /* MonthShowerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCF68EF16FE4FD90033C1CE /* MonthShowerDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FDCF68CD16FE4FD90033C1CE /* MonthSShower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonthSShower.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDCF68D016FE4FD90033C1CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FDCF68D216FE4FD90033C1CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FDCF68D416FE4FD90033C1CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FDCF68D816FE4FD90033C1CE /* MonthSShower-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MonthSShower-Info.plist"; sourceTree = "<group>"; };
+		FDCF68DA16FE4FD90033C1CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FDCF68DC16FE4FD90033C1CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FDCF68DE16FE4FD90033C1CE /* MonthSShower-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonthSShower-Prefix.pch"; sourceTree = "<group>"; };
+		FDCF68DF16FE4FD90033C1CE /* MonthShowerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthShowerAppDelegate.h; sourceTree = "<group>"; };
+		FDCF68E016FE4FD90033C1CE /* MonthShowerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonthShowerAppDelegate.m; sourceTree = "<group>"; };
+		FDCF68E216FE4FD90033C1CE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FDCF68E416FE4FD90033C1CE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FDCF68E616FE4FD90033C1CE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FDCF68E916FE4FD90033C1CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FDCF68EB16FE4FD90033C1CE /* MonthShowerMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthShowerMasterViewController.h; sourceTree = "<group>"; };
+		FDCF68EC16FE4FD90033C1CE /* MonthShowerMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonthShowerMasterViewController.m; sourceTree = "<group>"; };
+		FDCF68EE16FE4FD90033C1CE /* MonthShowerDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthShowerDetailViewController.h; sourceTree = "<group>"; };
+		FDCF68EF16FE4FD90033C1CE /* MonthShowerDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonthShowerDetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDCF68CA16FE4FD90033C1CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCF68D116FE4FD90033C1CE /* UIKit.framework in Frameworks */,
+				FDCF68D316FE4FD90033C1CE /* Foundation.framework in Frameworks */,
+				FDCF68D516FE4FD90033C1CE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDCF68C416FE4FD90033C1CE = {
+			isa = PBXGroup;
+			children = (
+				FDCF68D616FE4FD90033C1CE /* MonthSShower */,
+				FDCF68CF16FE4FD90033C1CE /* Frameworks */,
+				FDCF68CE16FE4FD90033C1CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDCF68CE16FE4FD90033C1CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDCF68CD16FE4FD90033C1CE /* MonthSShower.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDCF68CF16FE4FD90033C1CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDCF68D016FE4FD90033C1CE /* UIKit.framework */,
+				FDCF68D216FE4FD90033C1CE /* Foundation.framework */,
+				FDCF68D416FE4FD90033C1CE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDCF68D616FE4FD90033C1CE /* MonthSShower */ = {
+			isa = PBXGroup;
+			children = (
+				FDCF68DF16FE4FD90033C1CE /* MonthShowerAppDelegate.h */,
+				FDCF68E016FE4FD90033C1CE /* MonthShowerAppDelegate.m */,
+				FDCF68E816FE4FD90033C1CE /* MainStoryboard.storyboard */,
+				FDCF68EB16FE4FD90033C1CE /* MonthShowerMasterViewController.h */,
+				FDCF68EC16FE4FD90033C1CE /* MonthShowerMasterViewController.m */,
+				FDCF68EE16FE4FD90033C1CE /* MonthShowerDetailViewController.h */,
+				FDCF68EF16FE4FD90033C1CE /* MonthShowerDetailViewController.m */,
+				FDCF68D716FE4FD90033C1CE /* Supporting Files */,
+			);
+			path = MonthSShower;
+			sourceTree = "<group>";
+		};
+		FDCF68D716FE4FD90033C1CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDCF68D816FE4FD90033C1CE /* MonthSShower-Info.plist */,
+				FDCF68D916FE4FD90033C1CE /* InfoPlist.strings */,
+				FDCF68DC16FE4FD90033C1CE /* main.m */,
+				FDCF68DE16FE4FD90033C1CE /* MonthSShower-Prefix.pch */,
+				FDCF68E216FE4FD90033C1CE /* Default.png */,
+				FDCF68E416FE4FD90033C1CE /* Default@2x.png */,
+				FDCF68E616FE4FD90033C1CE /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDCF68CC16FE4FD90033C1CE /* MonthSShower */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDCF68F316FE4FD90033C1CE /* Build configuration list for PBXNativeTarget "MonthSShower" */;
+			buildPhases = (
+				FDCF68C916FE4FD90033C1CE /* Sources */,
+				FDCF68CA16FE4FD90033C1CE /* Frameworks */,
+				FDCF68CB16FE4FD90033C1CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonthSShower;
+			productName = MonthSShower;
+			productReference = FDCF68CD16FE4FD90033C1CE /* MonthSShower.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDCF68C516FE4FD90033C1CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MonthShower;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Nazar Demchuk";
+			};
+			buildConfigurationList = FDCF68C816FE4FD90033C1CE /* Build configuration list for PBXProject "MonthSShower" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FDCF68C416FE4FD90033C1CE;
+			productRefGroup = FDCF68CE16FE4FD90033C1CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDCF68CC16FE4FD90033C1CE /* MonthSShower */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDCF68CB16FE4FD90033C1CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCF68DB16FE4FD90033C1CE /* InfoPlist.strings in Resources */,
+				FDCF68E316FE4FD90033C1CE /* Default.png in Resources */,
+				FDCF68E516FE4FD90033C1CE /* Default@2x.png in Resources */,
+				FDCF68E716FE4FD90033C1CE /* Default-568h@2x.png in Resources */,
+				FDCF68EA16FE4FD90033C1CE /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDCF68C916FE4FD90033C1CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCF68DD16FE4FD90033C1CE /* main.m in Sources */,
+				FDCF68E116FE4FD90033C1CE /* MonthShowerAppDelegate.m in Sources */,
+				FDCF68ED16FE4FD90033C1CE /* MonthShowerMasterViewController.m in Sources */,
+				FDCF68F016FE4FD90033C1CE /* MonthShowerDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FDCF68D916FE4FD90033C1CE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDCF68DA16FE4FD90033C1CE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FDCF68E816FE4FD90033C1CE /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDCF68E916FE4FD90033C1CE /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDCF68F116FE4FD90033C1CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FDCF68F216FE4FD90033C1CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDCF68F416FE4FD90033C1CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MonthSShower/MonthSShower-Prefix.pch";
+				INFOPLIST_FILE = "MonthSShower/MonthSShower-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FDCF68F516FE4FD90033C1CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MonthSShower/MonthSShower-Prefix.pch";
+				INFOPLIST_FILE = "MonthSShower/MonthSShower-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDCF68C816FE4FD90033C1CE /* Build configuration list for PBXProject "MonthSShower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDCF68F116FE4FD90033C1CE /* Debug */,
+				FDCF68F216FE4FD90033C1CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDCF68F316FE4FD90033C1CE /* Build configuration list for PBXNativeTarget "MonthSShower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDCF68F416FE4FD90033C1CE /* Debug */,
+				FDCF68F516FE4FD90033C1CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDCF68C516FE4FD90033C1CE /* Project object */;
+}
