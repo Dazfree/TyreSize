@@ -168,7 +168,7 @@
 {
         if (12 == monthNumber)
             {
-                return 0;
+                return 1;
             }
         else
             {
@@ -194,14 +194,23 @@
     
    NSLog(@"The current Month is %d", a);
     
-#error пока здесь не было авторелиза это был лик
-    NSArray *seasons = [[[NSArray alloc] initWithObjects: @"Winter", @"Spring", @"Summer", @"Autumn", nil] autorelease];
+    NSArray *seasons = [[NSArray alloc] initWithObjects:@"Winter", @"Spring", @"Summer", @"Autumn", @"Winter",nil];
     
 //#error в obj-c есть оператор ",", но он используется крайне редко, и делает совсем не то что ты хотел тут получить. в твоем случае нужно использовать логическое или "||", и тогда условие будет выглядеть так if (a == 1 || a == 2 || a == 12)
 //#error причина креша состоит вот в чем: текущий месяц март, поэтому на этом шаге а == 3. твое условие вычисляет а == 1 и получает false (3 != 1). дальше оно берет и просто вычислет 2, что в C дает true, потом 12 тоже дает true. в итоге каким бы ни было а, программ все равно всегда заходит в первый if. дальше оно смотрит section == 0. делегатские вызовы не всегда работают последовательно. т.е. табличка может сначала попросить хеде для section == 3, потом для section == 1 и т.д. в общем порядок не определен. ошибка в том что ты везде проверяешь section == 0. и получается, например, параметром в метод приходит section == 3, оно заходит в этот if и сравнивает section и 0, конечено же выходит false, поэтому не срабатывает return @"Winter". так как больше ни в какие else if оно не заходит, то выходит что метод ничего не возвращает, и из-за этого креш
 //   
     NSUInteger currentSeasonNumber = [self seasonNumberFromMonthNumber: a];
-	return [seasons objectAtIndex:(section + currentSeasonNumber) & 3];
+    
+    if (section == 0)
+        {
+            return  [seasons objectAtIndex: currentSeasonNumber];
+        
+        }
+        else
+        {
+            NSUInteger currentSectionNumber = (currentSeasonNumber + (section - currentSeasonNumber) + 3 - currentSeasonNumber - 1);
+            return [seasons objectAtIndex: currentSectionNumber];
+        }
 }
     
 
