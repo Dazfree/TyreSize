@@ -18,6 +18,7 @@
 @end
 
 @implementation MonthShowerMasterViewController
+@synthesize monthArray;
 
 - (void)awakeFromNib
 {
@@ -28,13 +29,14 @@
 - (void)dealloc
 {
    // [_objects release];
+    [monthArray release];
     
     [super dealloc];
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    
 //	// Do any additional setup after loading the view, typically from a nib.
 //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 //
@@ -42,21 +44,12 @@
 //    self.navigationItem.rightBarButtonItem = addButton;
     
     
-//    NSArray *myArray = [[NSArray alloc] initWithObjects:@"", @"Январь", @"Февраль", @"Март", @"Апрель", @"Май", @"Июнь", @"Июль", @"Август", @"Сентябрь", @"Октябрь", @"Ноябрь",@"Декабрь", nil];
-//
-//    
-//    
-//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//        [dateFormatter setDateFormat:@"M"];
-//        
-//        NSString *currentMonth = [[NSString alloc]init];
-//        currentMonth = [dateFormatter stringFromDate:[NSDate date]];
-//        NSInteger a = [currentMonth integerValue];
+    NSArray *months = [[NSArray alloc] initWithObjects:@"", @"January", @"February", @"March", @"April", @"May", @"June", @"July", @"August", @"September", @"October", @"November",@"December", nil];
     
-  
-    
-//    
-//    NSLog(@"The current Month is %@", [myArray objectAtIndex: a]);
+    self.monthArray = months;
+    [months release];
+    [super viewDidLoad];
+
 //    //NSLog(@"%d", [myArray count]);
 //    
 //    int x = 1;
@@ -77,16 +70,10 @@
 //        x++;
 //    }
     
-    
-    
-    
 //    [MonthShowerMasterViewController:MonthShowerMasterViewController animated:YES];
-    
-    
 
     
 }
-    
 
 
 - (void)didReceiveMemoryWarning
@@ -112,31 +99,31 @@
     return 4;
 }
 
-
-
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 3;
 }
 
 
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-  //  NSDate *object = _objects[indexPath.row];
-  //  cell.textLabel.text = [object description];
+    if (cell == nil)
+    {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"] autorelease];
+    }
+   
+    cell.tag = indexPath.row; // Important for identifying the cell easily later
+    cell.textLabel.text = [monthArray objectAtIndex:indexPathForRow.row inSection.];
+
     return cell;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
 
 //- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -179,10 +166,9 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
+
     
-//    NSArray *myArray = [[NSArray alloc] initWithObjects:@"", @"Январь", @"Февраль", @"Март", @"Апрель", @"Май", @"Июнь", @"Июль", @"Август", @"Сентябрь", @"Октябрь", @"Ноябрь",@"Декабрь", nil];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:@"M"];
     
 //#error тут ты выделяешь память для currentMonth, а потом присваиваешь указателю другое значение. тут можно было сделать просто NSString *currentMonth = [dateFormatter stringFromDate:[NSDate date]]. до введения ARC это было бы мемори ликом
@@ -192,9 +178,9 @@
     NSString *currentMonth = [dateFormatter stringFromDate:[NSDate date]];
     NSInteger a = [currentMonth integerValue];
     
-   NSLog(@"The current Month is %d", a);
+  // NSLog(@"The current Month is %d", a);
     
-#error пока здесь не было авторелиза это был лик
+//#error пока здесь не было авторелиза это был лик
     NSArray *seasons = [[[NSArray alloc] initWithObjects: @"Winter", @"Spring", @"Summer", @"Autumn", nil] autorelease];
     
 //#error в obj-c есть оператор ",", но он используется крайне редко, и делает совсем не то что ты хотел тут получить. в твоем случае нужно использовать логическое или "||", и тогда условие будет выглядеть так if (a == 1 || a == 2 || a == 12)
@@ -203,11 +189,7 @@
     NSUInteger currentSeasonNumber = [self seasonNumberFromMonthNumber: a];
 	return [seasons objectAtIndex:(section + currentSeasonNumber) & 3];
 }
-    
 
-    
-    
-        
 //    if(section == 0)
 //        return @"Summer";
 //    else if (section == 1)

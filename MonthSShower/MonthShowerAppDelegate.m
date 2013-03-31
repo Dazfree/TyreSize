@@ -37,9 +37,9 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
     
-    MonthShowerMasterViewController *monthShowerMasterViewController = [[MonthShowerMasterViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    MonthShowerMasterViewController *monthShowerMasterViewController = [[[MonthShowerMasterViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
 
-    [monthShowerMasterViewController release];
+   // [monthShowerMasterViewController release];
 
 }
 
