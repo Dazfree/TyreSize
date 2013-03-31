@@ -115,7 +115,7 @@
     }
    
     cell.tag = indexPath.row; // Important for identifying the cell easily later
-    cell.textLabel.text = [monthArray objectAtIndex:indexPathForRow.row inSection.];
+    cell.textLabel.text = [monthArray objectAtIndex:indexPath.row];
 
     return cell;
 }
@@ -126,22 +126,12 @@
     return NO;
 }
 
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        [_objects removeObjectAtIndex:indexPath.row];
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//    }
-//}
 
-/*
 // Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+//- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+//{
+//}
+//*/
 
 /*
 // Override to support conditional rearranging of the table view.
@@ -178,8 +168,6 @@
     NSString *currentMonth = [dateFormatter stringFromDate:[NSDate date]];
     NSInteger a = [currentMonth integerValue];
     
-  // NSLog(@"The current Month is %d", a);
-    
 //#error пока здесь не было авторелиза это был лик
     NSArray *seasons = [[[NSArray alloc] initWithObjects: @"Winter", @"Spring", @"Summer", @"Autumn", nil] autorelease];
     
@@ -189,16 +177,6 @@
     NSUInteger currentSeasonNumber = [self seasonNumberFromMonthNumber: a];
 	return [seasons objectAtIndex:(section + currentSeasonNumber) & 3];
 }
-
-//    if(section == 0)
-//        return @"Summer";
-//    else if (section == 1)
-//        return @"Autumn";
-//    else if (section == 2)
-//        return @"Winter";
-//    else
-//        return @"Spring";
-//}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
