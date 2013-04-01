@@ -36,61 +36,9 @@
 
 - (void)viewDidLoad
 {
-    
-//	// Do any additional setup after loading the view, typically from a nib.
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-//
-//    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)] autorelease];
-//    self.navigationItem.rightBarButtonItem = addButton;
-    
-    
-    NSArray *months = [[NSArray alloc] initWithObjects:@"", @"January", @"February", @"March", @"April", @"May", @"June", @"July", @"August", @"September", @"October", @"November",@"December", nil];
-    
-    self.monthArray = months;
-    [months release];
+    self.monthArray = [NSArray arrayWithObjects:@"January", @"February", @"March", @"April", @"May", @"June", @"July", @"August", @"September", @"October", @"November", @"December", nil];
     [super viewDidLoad];
-
-//    //NSLog(@"%d", [myArray count]);
-//    
-//    int x = 1;
-//    NSInteger myMonth = a + 1;
-//    
-//    //NSLog(@"%@", myMonth);
-//    
-//    
-//    while (x < [myArray count])
-//    {
-//        if ((myMonth) == 13)
-//        {
-//            myMonth = 1;
-//        }
-//        
-//        NSLog(@"The next Month will be %@", [myArray objectAtIndex: myMonth]);
-//        myMonth++;
-//        x++;
-//    }
-    
-//    [MonthShowerMasterViewController:MonthShowerMasterViewController animated:YES];
-
-    
 }
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-//- (void)insertNewObject:(id)sender
-//{
-//    if (!_objects) {
-//        _objects = [[NSMutableArray alloc] init];
-//    }
-//    [_objects insertObject:[NSDate date] atIndex:0];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//}
 
 #pragma mark - Table View
 
@@ -115,7 +63,7 @@
     }
    
     cell.tag = indexPath.row; // Important for identifying the cell easily later
-    cell.textLabel.text = [monthArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.monthArray objectAtIndex:indexPath.row];
 
     return cell;
 }
@@ -127,30 +75,16 @@
 }
 
 
-// Override to support rearranging the table view.
-//- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-//{
-//}
-//*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 -(NSUInteger)seasonNumberFromMonthNumber:(NSUInteger)monthNumber
 {
-        if (12 == monthNumber)
-            {
-                return 0;
-            }
-        else
-            {
-                return (monthNumber / 3);
-            }
+	if (12 == monthNumber)
+	{
+		return 0;
+	}
+	else
+	{
+		return (monthNumber / 3);
+	}
 }
 
 
