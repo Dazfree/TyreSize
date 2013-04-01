@@ -7,15 +7,6 @@
 //
 
 #import "MonthShowerMasterViewController.h"
-#import "MonthShowerDetailViewController.h"
-
-@interface MonthShowerMasterViewController () {
-    //NSMutableArray *_objects;
-}
-
-
-
-@end
 
 @implementation MonthShowerMasterViewController
 @synthesize monthArray;
@@ -28,7 +19,6 @@
 
 - (void)dealloc
 {
-   // [_objects release];
     [monthArray release];
     
     [super dealloc];
@@ -90,8 +80,6 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-
-    
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:@"M"];
     
@@ -110,15 +98,6 @@
 //   
     NSUInteger currentSeasonNumber = [self seasonNumberFromMonthNumber: a];
 	return [seasons objectAtIndex:(section + currentSeasonNumber) & 3];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-     //   NSDate *object = _objects[indexPath.row];
-    //    [[segue destinationViewController] setDetailItem:object];
-   // }
 }
 
 @end

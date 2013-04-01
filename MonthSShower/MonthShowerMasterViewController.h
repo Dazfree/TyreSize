@@ -10,9 +10,6 @@
 
 @interface MonthShowerMasterViewController : UITableViewController
 <UITableViewDelegate, UITableViewDataSource>
-{
-    NSArray *monthArray;
-}
 
 @property (nonatomic, retain) NSArray *monthArray;
 
