@@ -8,6 +8,12 @@
 
 #import "MonthShowerMasterViewController.h"
 
+@interface MonthShowerMasterViewController()
+
+@property (nonatomic, retain) NSArray *monthArray;
+
+@end
+
 @implementation MonthShowerMasterViewController
 @synthesize monthArray;
 
