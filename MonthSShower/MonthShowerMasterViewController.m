@@ -7,11 +7,19 @@
 //
 
 #import "MonthShowerMasterViewController.h"
+<<<<<<< HEAD
 #import "MonthShowerDetailViewController.h"
 
 @interface MonthShowerMasterViewController () {
 }
 
+=======
+
+@interface MonthShowerMasterViewController()
+
+@property (nonatomic, retain) NSArray *monthArray;
+
+>>>>>>> b40c81533a85ec838d5616f94fdc0ff025193c24
 @end
 
 @implementation MonthShowerMasterViewController
@@ -25,12 +33,18 @@
 
 - (void)dealloc
 {
+<<<<<<< HEAD
     //[monthArray release];
+=======
+    [monthArray release];
+    
+>>>>>>> b40c81533a85ec838d5616f94fdc0ff025193c24
     [super dealloc];
 }
 
 - (void)viewDidLoad
 {
+<<<<<<< HEAD
     
     NSArray *months = [[NSArray alloc] initWithObjects:@"", @"January", @"February", @"March", @"April", @"May", @"June", @"July", @"August", @"September", @"October", @"November",@"December", nil];
     
@@ -65,17 +79,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+=======
+    self.monthArray = [NSArray arrayWithObjects:@"January", @"February", @"March", @"April", @"May", @"June", @"July", @"August", @"September", @"October", @"November", @"December", nil];
+    [super viewDidLoad];
+>>>>>>> b40c81533a85ec838d5616f94fdc0ff025193c24
 }
-
-//- (void)insertNewObject:(id)sender
-//{
-//    if (!_objects) {
-//        _objects = [[NSMutableArray alloc] init];
-//    }
-//    [_objects insertObject:[NSDate date] atIndex:0];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//}
 
 #pragma mark - Table View
 
@@ -99,6 +107,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"] autorelease];
     }
    
+<<<<<<< HEAD
     //cell.tag = indexPath.row; // Important for identifying the cell easily later
     //cell.textLabel.text = [monthArray objectAtIndex:indexPath.row];
     
@@ -107,6 +116,10 @@
         cell.textLabel.text = @"About";
         cell.textLabel.textColor = [UIColor darkGrayColor];
     }
+=======
+    cell.tag = indexPath.row; // Important for identifying the cell easily later
+    cell.textLabel.text = [self.monthArray objectAtIndex:indexPath.row];
+>>>>>>> b40c81533a85ec838d5616f94fdc0ff025193c24
 
     return cell;
 }
@@ -118,37 +131,21 @@
 }
 
 
-// Override to support rearranging the table view.
-//- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-//{
-//}
-//*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 -(NSUInteger)seasonNumberFromMonthNumber:(NSUInteger)monthNumber
 {
-        if (12 == monthNumber)
-            {
-                return 0;
-            }
-        else
-            {
-                return (monthNumber / 3);
-            }
+	if (12 == monthNumber)
+	{
+		return 0;
+	}
+	else
+	{
+		return (monthNumber / 3);
+	}
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-
-    
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:@"M"];
     
@@ -167,15 +164,6 @@
 //   
     NSUInteger currentSeasonNumber = [self seasonNumberFromMonthNumber: a];
 	return [seasons objectAtIndex:(section + currentSeasonNumber) & 3];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-     //   NSDate *object = _objects[indexPath.row];
-    //    [[segue destinationViewController] setDetailItem:object];
-   // }
 }
 
 @end

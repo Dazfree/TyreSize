@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MonthShowerMasterViewController : UITableViewController
-<UITableViewDelegate, UITableViewDataSource>
-{
-    NSArray *monthArray;
-}
-
-@property (nonatomic, retain) NSArray *monthArray;
+@interface MonthShowerMasterViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
