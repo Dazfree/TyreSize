@@ -10,10 +10,7 @@
 #import "MonthShowerDetailViewController.h"
 
 @interface MonthShowerMasterViewController () {
-    //NSMutableArray *_objects;
 }
-
-
 
 @end
 
@@ -28,27 +25,18 @@
 
 - (void)dealloc
 {
-   // [_objects release];
-    [monthArray release];
-    
+    //[monthArray release];
     [super dealloc];
 }
 
 - (void)viewDidLoad
 {
     
-//	// Do any additional setup after loading the view, typically from a nib.
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-//
-//    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)] autorelease];
-//    self.navigationItem.rightBarButtonItem = addButton;
-    
-    
     NSArray *months = [[NSArray alloc] initWithObjects:@"", @"January", @"February", @"March", @"April", @"May", @"June", @"July", @"August", @"September", @"October", @"November",@"December", nil];
     
-    self.monthArray = months;
-    [months release];
-    [super viewDidLoad];
+//    self.monthArray = months;
+//    [months autorelease];
+   [super viewDidLoad];
 
 //    //NSLog(@"%d", [myArray count]);
 //    
@@ -69,9 +57,6 @@
 //        myMonth++;
 //        x++;
 //    }
-    
-//    [MonthShowerMasterViewController:MonthShowerMasterViewController animated:YES];
-
     
 }
 
@@ -114,8 +99,14 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"] autorelease];
     }
    
-    cell.tag = indexPath.row; // Important for identifying the cell easily later
-    cell.textLabel.text = [monthArray objectAtIndex:indexPath.row];
+    //cell.tag = indexPath.row; // Important for identifying the cell easily later
+    //cell.textLabel.text = [monthArray objectAtIndex:indexPath.row];
+    
+    if (indexPath.section == 2 && indexPath.row == 0) {
+       // cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.text = @"About";
+        cell.textLabel.textColor = [UIColor darkGrayColor];
+    }
 
     return cell;
 }
